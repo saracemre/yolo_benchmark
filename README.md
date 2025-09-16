@@ -7,6 +7,18 @@ The goal is to compare performance between **CPU**, **MPS (GPU)**, and **CoreML*
 - `export_coreml.py` — converts a PyTorch `.pt` YOLOv8 model to CoreML `.mlpackage`
 - `yolo_benchmarking.py` — benchmarking script with FPS reporting (pipeline vs. inference)
 
+## Run Benchmarks
+```bash
+# CPU
+python yolo_benchmarking.py --source people.mp4 --mode cpu --save out_cpu.mp4
+
+# Apple MPS (GPU)
+python yolo_benchmarking.py --source people.mp4 --mode mps --save out_mps.mp4
+
+# CoreML
+python yolo_benchmarking.py --source people.mp4 --mode coreml --save out_coreml.mp4
+```
+
 ## Requirements
 ```bash
 python -m venv .venv && source .venv/bin/activate
